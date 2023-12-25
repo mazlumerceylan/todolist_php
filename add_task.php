@@ -16,6 +16,5 @@
         <input type="date" id="deadline" name="deadline"><br><br>
         <input type="submit" value="Aufgabe hinzufügen">
     </form>
-
 </body>
 </html>
