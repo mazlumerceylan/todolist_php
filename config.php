@@ -1,9 +1,16 @@
+
 <?php
+$servername = "localhost"; // Nome del server
+$username = "todolist_db"; // Nome utente del database
+$password = "j9qrsltCaGp]vSXf"; // Password del database
+$dbname = "todolist_db"; // Nome del database
 
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-$mysqli = new mysqli('localhost', 'todolist_db', 'j9qrsltCaGp]vSXf', 'todolist_db');
-if ($mysqli->connect_errno) {
-    throw new RuntimeException('mysqli-Verbindungsfehler: ' . $mysqli->connect_error);
+// Connessione al database
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verifica connessione
+if ($conn->connect_error) {
+    die("Connessione fallita: " . $conn->connect_error);
 }
-
+echo "Connessione riuscita";
 ?>
