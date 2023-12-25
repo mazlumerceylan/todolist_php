@@ -1,23 +1,26 @@
 <?php
-include_once 'config.php'; // Stelle sicher, dass diese Zeile die Konfigurationsdatei für die Datenbankverbindung korrekt einbindet
+session_start(); // Assicurati di avviare la sessione
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+include_once 'config.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id']; // ID dell'utente corrente
     $title = $_POST['title'];
     $description = $_POST['description'];
     $due_date = $_POST['due_date'];
 
-    $sql = "INSERT INTO tasks (title, description, due_date) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO tasks (user_id, title, description, due_date) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('sss', $title, $description, $due_date);
-    
+    $stmt->bind_param('isss', $user_id, $title, $description, $due_date);
+
     if ($stmt->execute()) {
-        echo "Aufgabe erfolgreich hinzugefügt. <a href='add_task.php'>Eine weitere Aufgabe hinzufügen</a>";
+        echo "Task aggiunta con successo. <a href='add_task.php'>Aggiungi un'altra task</a>";
     } else {
-        echo "Fehler beim Hinzufügen der Aufgabe: " . $conn->error;
+        echo "Errore durante l'aggiunta della task: " . $conn->error;
     }
     $stmt->close();
 } else {
-    header("Location: add_task.php"); // Wenn der Zugriff nicht über die POST-Methode erfolgt, leite um
+    header("Location: add_task.php");
     exit();
 }
 ?>
