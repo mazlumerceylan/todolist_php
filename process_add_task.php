@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user_id'])) {
     $stmt->bind_param('isss', $user_id, $title, $description, $due_date);
 
     if ($stmt->execute()) {
-        echo "Aufgabe erfolgreich hinzugefügt. <a href='add_task.php'>Eine weitere Aufgabe hinzufügen</a>";
+        echo "Aufgabe erfolgreich hinzugefügt. <a href='add_task.php'>Eine weitere Aufgabe hinzufügen</a> | <a href='dashboard.php'>Zurück zur Dashboard</a>";
     } else {
         echo "Fehler beim Hinzufügen der Aufgabe: " . $conn->error;
     }
