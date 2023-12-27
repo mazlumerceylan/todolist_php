@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/todolist_php/css/login_style.css">
 </head>
 <body>
+    <h1>ToDoList</h1>
     <h2>Benutzeranmeldung</h2>
     <form action="process_login.php" method="POST">
         <label for="email">E-Mail:</label><br>
