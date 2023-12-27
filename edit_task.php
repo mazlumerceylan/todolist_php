@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
         <html>
         <head>
             <title>Aufgabe bearbeiten</title>
+            <link rel="stylesheet" href="edit_task.css">
         </head>
         <body>
             <h2>Aufgabe bearbeiten</h2>

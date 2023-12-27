@@ -48,8 +48,11 @@
 
     <br>
     <a href="add_task.php">Aufgabe hinzufügen</a> <!-- Link zum Hinzufügen einer Aufgabe -->
-    </br>
+    <hr>
     <br>
     <a href="change_data.php">Ändern Sie Ihre Anmeldeinformationen</a>
+    <br>
+    <a href="login.php">Logout</a>
+
 </body>
 </html>
