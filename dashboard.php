@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
     <h2>Dashboard</h2>
@@ -45,6 +46,6 @@
     <a href="add_task.php">Aufgabe hinzufügen</a> <!-- Link zum Hinzufügen einer Aufgabe -->
     </br>
     <br>
-    <a href="modifica_dati.php">Ändern Sie Ihre Anmeldeinformationen</a>
+    <a href="change_data.php">Ändern Sie Ihre Anmeldeinformationen</a>
 </body>
 </html>
