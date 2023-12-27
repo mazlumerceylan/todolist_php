@@ -16,6 +16,10 @@
 
     // Abrufen der Aufgaben des angemeldeten Benutzers
     $user_id = $_SESSION['user_id']; // Stelle sicher, dass die Sitzung gestartet wurde
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: login.php");
+        exit();
+    }
     $sql = "SELECT * FROM tasks WHERE user_id = ?"; // SQL-Abfrage, um Aufgaben des Benutzers abzurufen
     $stmt = $conn->prepare($sql); // Vorbereiten der SQL-Abfrage
     $stmt->bind_param('i', $user_id); // Binden des Benutzer-IDs als Parameter
