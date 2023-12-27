@@ -7,6 +7,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hash des Passworts für die Sicherheit
 
+    // Überprüfen, ob das Passwort die Kriterien erfüllt: mindestens 8 Zeichen, ein Großbuchstabe und eine Zahl
+    if (strlen($_POST['password']) < 8 || !preg_match("/[A-Z]/", $_POST['password']) || !preg_match("/[0-9]/", $_POST['password'])) {
+        echo "Das Passwort muss mindestens 8 Zeichen lang sein, einen Großbuchstaben und eine Zahl enthalten.";
+    } else {
+        $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    }
+
     // Überprüfen, ob die E-Mail bereits in der Datenbank registriert ist
     $sql_check = "SELECT id FROM users WHERE email = ? LIMIT 1";
     $stmt_check = $conn->prepare($sql_check);
@@ -44,6 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="/todolist_php/css/register_processed.css">
 </head>
 <body>
-    
+
 </body>
 </html>
