@@ -43,5 +43,8 @@
 
     <br>
     <a href="add_task.php">Aufgabe hinzufügen</a> <!-- Link zum Hinzufügen einer Aufgabe -->
+    </br>
+    <br>
+    <a href="modifica_dati.php">Ändern Sie Ihre Anmeldeinformationen</a>
 </body>
 </html>
