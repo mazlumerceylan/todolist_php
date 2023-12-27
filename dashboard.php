@@ -25,13 +25,17 @@
     if ($result->num_rows > 0) {   // Überprüfen, ob Aufgaben vorhanden sind
         // Anzeigen der Aufgaben, falls vorhanden
         while ($row = $result->fetch_assoc()) {  // Schleife zur Anzeige der Aufgaben
-            echo "<div>"; // Anfang des Div-Containers für jede Aufgabe
-            echo "<h3>" . $row['title'] . "</h3>"; // Anzeigen des Titels der Aufgabe
-            echo "<p>" . $row['description'] . "</p>"; // Anzeigen der Beschreibung der Aufgabe
-            echo "<p>Fälligkeitsdatum: " . $row['due_date'] . "</p>"; // Anzeigen des Fälligkeitsdatums der Aufgabe
-            echo "<a href='edit_task.php?id=" . $row['id'] . "'>Bearbeiten</a>"; // Link zum Bearbeiten der Aufgabe
-            echo "<a href='delete_task.php?id=" . $row['id'] . "'>Löschen</a>"; // Link zum Löschen der Aufgabe
-            echo "</div>"; // Ende des Div-Containers für jede Aufgabe
+            echo "<div>"; // Inizio del container per ogni attività
+            echo "<h3>" . $row['title'] . "</h3>"; // Titolo dell'attività
+            echo "<p>" . $row['description'] . "</p>"; // Descrizione dell'attività
+            echo "<p>Fälligkeitsdatum: " . $row['due_date'] . "</p>"; // Data di scadenza dell'attività
+            echo "<div class='task-links'>"; // Inizio del container per i link
+            echo "<a href='edit_task.php?id=" . $row['id'] . "'>Bearbeiten</a>"; // Link per la modifica
+            echo "<span></span>"; // Spazio visivo tra i link
+            echo "<a href='delete_task.php?id=" . $row['id'] . "'>Löschen</a>"; // Link per l'eliminazione
+            echo "</div>"; // Fine del container per i link
+            echo "</div>"; // Fine del container per ogni attività
+
         }
     } else {
         echo "Keine Aufgaben gefunden."; // Ausgabe, falls keine Aufgaben vorhanden sind
