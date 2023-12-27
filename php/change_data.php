@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daten bearbeiten</title>
-    <link rel="stylesheet" href="change_data.css">
+    <link rel="stylesheet" href="/todolist_php/css/change_data.css">
 </head>
 <body>
     <h2>Daten bearbeiten</h2>

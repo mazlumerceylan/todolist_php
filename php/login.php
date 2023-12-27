@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anmeldung</title>
-    <link rel="stylesheet" href="login_style.css">
+    <link rel="stylesheet" href="/todolist_php/css/login_style.css">
 </head>
 <body>
     <h2>Benutzeranmeldung</h2>

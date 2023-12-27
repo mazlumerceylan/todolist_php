@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="/todolist_php/css/dashboard.css">
 </head>
 <body>
     <h2>Dashboard</h2>
@@ -48,7 +48,7 @@
 
     <br>
     <a href="add_task.php">Aufgabe hinzufügen</a> <!-- Link zum Hinzufügen einer Aufgabe -->
-    <hr>
+    
     <br>
     <a href="change_data.php">Ändern Sie Ihre Anmeldeinformationen</a>
     <br>
