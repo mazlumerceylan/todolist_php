@@ -20,10 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header("Location: dashboard.php"); // Weiterleitung nach dem Login
             exit();
         } else {
-            echo "Ungültiges Passwort.";
+            echo "Ungültige Anmeldeinformationen.";
+            echo "<br><a href='login.php'>Nochmal anmelden</a>"; // Aggiungi il link per tornare alla pagina di login
         }
     } else {
-        echo "Benutzer nicht gefunden.";
+        echo "Ungültige Anmeldeinformationen.";
+        echo "<br><a href='login.php'>Nochmal anmelden</a>"; // Aggiungi il link per tornare alla pagina di login
     }
     $stmt->close();
 } else {
@@ -31,3 +33,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit();
 }
 ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fail!</title>
+    <link rel="stylesheet" href="/todolist_php/css/process_login.css">
+</head>
+<body>
+    
+</body>
+</html>
